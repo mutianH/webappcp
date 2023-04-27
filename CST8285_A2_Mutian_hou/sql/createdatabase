@@ -1,0 +1,31 @@
+-- Database: `assignment2` and php web application user
+-- if could not rerun, go to php MyAdmin --> mysql--> choose all tables and repair table
+DROP DATABASE assignment2;
+CREATE DATABASE assignment2;
+GRANT USAGE ON *.* TO 'houuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON assignment2.* TO 'houuser'@'localhost';
+FLUSH PRIVILEGES;
+
+USE assignment2;
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE IF NOT EXISTS `courses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `level` int(1) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `startdate` Date NOT NULL,
+  `imageLocation` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `courses` (`id`, `name`, `level`, `description`,`startdate`,`imageLocation`) VALUES
+(1, 'java', 1, 'level1 introduction to java','2024-01-09','images/java.jpg'),
+(2, 'db', 2, ' database processing data','2024-01-09','images/dataProcessing.gif'),
+(3, 'web', 3, 'web programming','2024-01-09','images/webProgramming.jpg');
